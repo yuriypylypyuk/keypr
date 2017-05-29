@@ -7,4 +7,4 @@ RUN docker-php-ext-install -j$(nproc) gd
 RUN docker-php-ext-install zip
 COPY src/ /var/www/html/
 RUN cd /var/www/html && bin/grav install
-
+RUN chown -R www-data:www-data /var/www/html
