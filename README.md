@@ -49,3 +49,23 @@ Check the process of startup via `kubectl get pods` untill you see something lik
 
 To verify, that project is up and running use `curl $(minikube service nginx-service --url)`
 Additionally, you can type in the console `minikube service nginx-service --url` and point the browser to the responce of that command, it should be something like `http://192.168.99.100:30135`
+
+To handle the data persistance, you would need to remove
+
+`COPY src/ /var/www/html/`
+
+`RUN cd /var/www/html && bin/grav install`
+
+from the `/docker/php/Dockerfile` and add 
+
+`        volumeMounts:`
+`        - mountPath: /var/www/html`
+`          name: src`
+`      volumes:`
+`      - name: src`
+`        hostPath:`
+`          path: /hosthome/$USERNAME/keypr/docker_php/src`
+
+to the keypr/kubernetes/grav_deployment.yaml
+
+as VirtualBox is passing /home/ of the host os, to the guest os
