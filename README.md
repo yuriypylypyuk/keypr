@@ -2,7 +2,9 @@
 
 
 This project is intended to be installed under Linux, feel free to use it with other OS, just follow installation guite on [minikube](https://github.com/kubernetes/minikube/releases) and [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) pages
+
 In order to start this project, you'll need kubectl and minikube
+
 If you have VirtualBox installed, just follow this guide, if you're using another VM driver, add the appropriate `--vm-driver=xxx` flag to `minikube start`
 
 
@@ -75,3 +77,5 @@ from the `/docker/php/Dockerfile` and add
 to the `keypr/kubernetes/grav_deployment.yaml`
 
 as VirtualBox is passing `/home/` of the host os, to the `/hosthome/` of the  guest os
+
+
