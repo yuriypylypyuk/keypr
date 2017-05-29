@@ -72,6 +72,6 @@ from the `/docker/php/Dockerfile` and add
 
 `          path: /hosthome/$USERNAME/keypr/docker_php/src`
 
-to the keypr/kubernetes/grav_deployment.yaml
+to the `keypr/kubernetes/grav_deployment.yaml`
 
-as VirtualBox is passing /home/ of the host os, to the guest os
+as VirtualBox is passing `/home/` of the host os, to the `/hosthome/` of the  guest os
