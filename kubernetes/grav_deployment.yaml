@@ -13,6 +13,7 @@ spec:
       containers:
       - name: php7
         image: yuriypylypyuk/keypr:php7
+        imagePullPolicy: Always
         ports:
         - containerPort: 9000
 ---
@@ -30,6 +31,7 @@ spec:
       containers:
       - name: nginx
         image: yuriypylypyuk/keypr:nginx
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
 
