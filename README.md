@@ -59,11 +59,17 @@ To handle the data persistance, you would need to remove
 from the `/docker/php/Dockerfile` and add 
 
 `        volumeMounts:`
+
 `        - mountPath: /var/www/html`
+
 `          name: src`
+
 `      volumes:`
+
 `      - name: src`
+
 `        hostPath:`
+
 `          path: /hosthome/$USERNAME/keypr/docker_php/src`
 
 to the keypr/kubernetes/grav_deployment.yaml
