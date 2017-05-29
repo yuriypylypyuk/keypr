@@ -27,7 +27,7 @@ Start VM and let it download ISO + set your kubectl to face minikube.
 
 `minikube start`
 
-Clone the repository containing kubernetes config for the project.
+Clone the repository containing kubernetes config and Dockerfiles used for this project.
 
 `git clone https://github.com/yuriypylypyuk/keypr.git`
 
@@ -40,8 +40,11 @@ Create Kubernetes services.
 `kubectl create -f keypr/kubernetes/grav_services.yaml`
 
 Check the process of startup via `kubectl get pods` untill you see something like 
+
 `NAME                                READY     STATUS    RESTARTS   AGE`
+
 `nginx-deployment-3097956576-t4ngb   1/1       Running   0          1m`
+
 `php7-deployment-2208436050-t8fdl    1/1       Running   0          1m`
 
 To verify, that project is up and running use `curl $(minikube service nginx-service --url)`
